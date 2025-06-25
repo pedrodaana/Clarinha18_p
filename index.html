@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Feliz Aniversário, Clarinha 💖</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom, #ffccff, #ffe6f0);
+      color: #4b004b;
+      padding: 30px;
+      line-height: 1.8;
+      position: relative;
+      overflow-x: hidden; /* permite rolar verticalmente */
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      padding: 40px;
+      max-width: 700px;
+      margin: auto;
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+
+    h1 {
+      color: #cc0066;
+      font-size: 2em;
+    }
+
+    .decoracao {
+      font-size: 60px;
+      margin-top: 10px;
+      animation: pulse 1.5s infinite;
+      cursor: pointer;
+    }
+
+    .clique {
+      font-size: 18px;
+      color: #cc0066;
+      margin-bottom: 20px;
+      animation: piscar 1.2s infinite;
+    }
+
+    .eu-te-amo {
+      font-size: 32px;
+      color: #cc0066;
+      margin-top: 10px;
+      animation: aparecer 0.5s ease forwards, pulse 1.5s infinite;
+      display: none;
+    }
+
+    .assinatura {
+      text-align: right;
+      margin-top: 30px;
+      font-style: italic;
+      color: #99004d;
+    }
+
+    audio {
+      display: none;
+    }
+
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: pink;
+      transform: rotate(45deg);
+      animation: float 5s linear infinite;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: pink;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) scale(1) rotate(45deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh) scale(1.5) rotate(45deg);
+        opacity: 0;
+      }
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.2);
+      }
+    }
+
+    @keyframes piscar {
+      0%, 100% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0.2;
+      }
+    }
+
+    @keyframes aparecer {
+      from {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  </style>
+</head>
+<body>
+
+<audio id="musica" loop>
+  <source src="https://file.chatgptusercontent.com/file-NY42XL8c9hrU88HLA4wSzR" type="audio/mpeg">
+  Seu navegador não suporta áudio HTML5.
+</audio>
+
+<div class="card">
+  <h1>Feliz Aniversário, minha Clarinha! 🎂💖</h1>
+
+  <div id="decoracao" class="decoracao" onclick="mostrarEuTeAmo()">💗</div>
+  <div id="clique" class="clique">clique aqui</div>
+
+  <div id="euTeAmo" class="eu-te-amo">Eu te amo 💘</div>
+
+  <p>
+    Hoje é um dia muito especial, porque é o dia em que o mundo foi presenteado com a pessoa mais incrível que eu já conheci: <strong>você, minha Clarinha</strong>. 💫<br><br>
+    Mais um ano da sua vida, e mais um ano que tenho a sorte de compartilhar contigo – e que seja só o começo de muitos outros que ainda vamos viver <strong>juntinhos, lado a lado</strong>.<br><br>
+    Eu espero que hoje o seu coração esteja cheio de alegria, e que você sinta o quanto é <strong>amada, importante e essencial</strong> pra mim. Você é meu amor, meu presente de Deus, minha calmaria nos dias difíceis, meu sorriso no meio da tempestade, <strong>meu tudo</strong>. 🌹<br><br>
+    Sinto saudades de você todos os dias, mas também sinto aquela alegria gostosa de saber que logo, logo a distância vai virar abraço, e a saudade vai virar presença. E quando esse momento chegar, eu prometo te encher de beijos, carinho e amor como você merece. 💕<br><br>
+    Hoje é seu aniversário, mas sinceramente? <strong>Quem ganhou o maior presente fui eu</strong>, por ter você na minha vida, por poder te amar, cuidar de você, e viver essa história linda ao seu lado.<br><br>
+    <strong>Eu te amo demais</strong>, Clarinha. Mais do que as palavras conseguem dizer. Desculpa se eu repito muito isso, mas é que meu coração grita isso toda hora – e eu nunca vou cansar de te lembrar. 💌<br><br>
+    Você é o amor da minha vida. E hoje, eu só desejo que seu dia seja cheio de luz, risadas, amor e sonhos se realizando. Parabéns, meu amor! Que Deus continue te abençoando com essa alma linda que você tem.
+  </p>
+
+  <div class="assinatura">
+    Com todo o meu amor,<br>
+    <strong>Seu eterno apaixonado 💖✨</strong>
+  </div>
+</div>
+
+<script>
+  function criarCoracao() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (3 + Math.random() * 2) + "s";
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 5000);
+  }
+
+  setInterval(criarCoracao, 300);
+
+  function mostrarEuTeAmo() {
+    document.getElementById("decoracao").style.display = "none";
+    document.getElementById("clique").style.display = "none";
+    document.getElementById("euTeAmo").style.display = "block";
+
+    const musica = document.getElementById("musica");
+    musica.volume = 1;
+    musica.play().catch(() => {
+      alert("⚠️ Toque na tela novamente para ativar a música.");
+    });
+  }
+</script>
+
+</body>
+</html>
